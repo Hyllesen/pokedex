@@ -56,7 +56,8 @@ export default class App extends Component {
         <FlatList
           data={this.state.pokemons}
           keyExtractor={item => item.id}
-          renderItem={({ item }) => <PokemonWindow />}
+          renderItem={({ item }) =>
+            <PokemonWindow style={styles.pokemonWindow} image={item.sprites.front_default} />}
         />
       </View>
     );
@@ -116,5 +117,9 @@ const styles = StyleSheet.create({
     borderWidth: 50,
     borderColor: "#FFFFFF",
     borderRadius: 50
+  },
+  pokemonWindow: {
+    borderWidth: 3,
+    backgroundColor: "white"
   }
 });
